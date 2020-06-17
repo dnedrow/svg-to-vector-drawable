@@ -93,6 +93,7 @@ class SvgFilesProcessor @JvmOverloads constructor(
         if (source.fileName.toString().endsWith(".svg")) {
             val targetFile = getFileWithXMlExtention(target, prefix, extension, extensionSuffix)
             val fous = FileOutputStream(targetFile)
+            println("Generating file: ${targetFile.name}")
             Svg2Vector.parseSvgToXml(source.toFile(), fous)
         } else {
             println("Skipping file as its not svg " + source.fileName.toString())
