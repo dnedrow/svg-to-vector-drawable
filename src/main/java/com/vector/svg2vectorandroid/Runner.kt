@@ -18,11 +18,7 @@ fun main(args: Array<String>) {
     val sourceDirectory = args[0]
     val destinationDirectory = args.getOrNull(1)
     if (sourceDirectory.isNotEmpty()) {
-        val processor = if (destinationDirectory != null) {
-            SvgFilesProcessor(sourceDirectory, destinationDirectory)
-        } else {
-            SvgFilesProcessor(sourceDirectory)
-        }
+        val processor = SvgFilesProcessor(sourceDirectory, destinationDirectory)
         processor.process()
     }
 }
