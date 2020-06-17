@@ -37,7 +37,7 @@ class SvgFilesProcessor @JvmOverloads constructor(
                         options,
                         Int.MAX_VALUE,
                         object : FileVisitor<Path> {
-                            override fun postVisitDirectory(dir: Path, exc: IOException): FileVisitResult {
+                            override fun postVisitDirectory(dir: Path, exc: IOException?): FileVisitResult {
                                 return FileVisitResult.CONTINUE
                             }
 
