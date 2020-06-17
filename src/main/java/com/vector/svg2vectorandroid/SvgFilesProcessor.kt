@@ -20,13 +20,14 @@ import java.util.*
 class SvgFilesProcessor @JvmOverloads constructor(
         sourceSvgDirectory: String,
         destinationVectorDirectory: String?,
-        private val prefix: String = "ic_",
+        prefix: String?,
         private val extension: String = "xml",
         private val extensionSuffix: String = ""
 ) {
     private val sourceSvgPath: Path = Paths.get(sourceSvgDirectory)
     private val destinationVectorPath: Path =
             Paths.get(destinationVectorDirectory ?: "$sourceSvgDirectory/ProcessedSVG")
+    private val prefix = prefix ?: ""
 
     fun process() {
         try {
